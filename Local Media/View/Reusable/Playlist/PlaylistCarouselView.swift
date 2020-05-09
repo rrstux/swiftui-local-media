@@ -12,12 +12,11 @@ struct PlaylistCarouselView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                PlaylistBoxView()
-                PlaylistBoxView()
-                PlaylistBoxView()
-                PlaylistBoxView()
-                PlaylistBoxView()
-                PlaylistBoxView()
+                PlaylistBoxView(viewModel: PlaylistBoxView.ViewModel())
+                PlaylistBoxView(viewModel: PlaylistBoxView.ViewModel())
+                PlaylistBoxView(viewModel: PlaylistBoxView.ViewModel())
+                PlaylistBoxView(viewModel: PlaylistBoxView.ViewModel())
+                PlaylistBoxView(viewModel: PlaylistBoxView.ViewModel())
             }
         }
     }
