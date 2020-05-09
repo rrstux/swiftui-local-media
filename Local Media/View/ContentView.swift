@@ -15,15 +15,23 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeScreenView().tabItem {
-                Image(systemName: "house").foregroundColor(Color.red)
+                Image(systemName: "house")
                 Text("Home")
             }
-        }
+            Text("Profile").tabItem {
+                Image(systemName: "person")
+                Text("Profile")
+            }
+            Text("Settings").tabItem {
+                Image(systemName: "gear")
+                Text("Settings")
+            }
+        }.accentColor(Color(Colors.primary.get()))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environment(\.colorScheme, .dark)
     }
 }

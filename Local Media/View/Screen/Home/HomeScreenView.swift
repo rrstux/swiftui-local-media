@@ -11,15 +11,17 @@ import SwiftUI
 struct HomeScreenView: View {
     var body: some View {
         NavigationView {
-            Text("da").foregroundColor(Color(Colors.get(for: .primary)))
-            
-            .navigationBarTitle("Home")
+            ScrollView(.vertical, showsIndicators: true) {
+                PlaylistsWidgetView()
+            }
+            .navigationBarHidden(true)
+            .navigationBarTitle("Local Player")
         }
     }
 }
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenView()
+        HomeScreenView().environment(\.colorScheme, .dark)
     }
 }
