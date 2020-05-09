@@ -26,7 +26,9 @@ struct ContentView: View {
                 Image(systemName: "gear")
                 Text("Settings")
             }
-        }.accentColor(Color(Colors.primary.get()))
+        }
+        .accentColor(Color(Colors.primary.get()))
+        
     }
 }
 
