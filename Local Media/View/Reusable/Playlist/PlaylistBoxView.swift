@@ -57,7 +57,18 @@ extension PlaylistBoxView {
         @Published private(set) var tracks: [Track] = []
         
         func loadTracks() {
-            tracks.append(Track(name: "November Rain", artist: "Guns N' Roses"))
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let da = Track(context: context)
+            da.title = "The Day that Never Comes"
+            da.artist = "Metallica"
+            do {
+                try context.save()
+            } catch {
+                print("Could not save...")
+            }
+            
+            
         }
     }
 }

@@ -20,7 +20,8 @@
 		46BCD6BD2467061B00EB48E5 /* PlaylistBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6BC2467061B00EB48E5 /* PlaylistBoxView.swift */; };
 		46BCD6BF24670AA100EB48E5 /* PlaylistCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6BE24670AA100EB48E5 /* PlaylistCarouselView.swift */; };
 		46BCD6C224670AFB00EB48E5 /* PlaylistsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6C124670AFB00EB48E5 /* PlaylistsWidgetView.swift */; };
-		46BCD6C6246719A000EB48E5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6C5246719A000EB48E5 /* Track.swift */; };
+		46BCD6CB24671FF200EB48E5 /* TrackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6CA24671FF200EB48E5 /* TrackRepository.swift */; };
+		46BCD6CD2467201500EB48E5 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6CC2467201500EB48E5 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,8 @@
 		46BCD6BC2467061B00EB48E5 /* PlaylistBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistBoxView.swift; sourceTree = "<group>"; };
 		46BCD6BE24670AA100EB48E5 /* PlaylistCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCarouselView.swift; sourceTree = "<group>"; };
 		46BCD6C124670AFB00EB48E5 /* PlaylistsWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsWidgetView.swift; sourceTree = "<group>"; };
-		46BCD6C5246719A000EB48E5 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		46BCD6CA24671FF200EB48E5 /* TrackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRepository.swift; sourceTree = "<group>"; };
+		46BCD6CC2467201500EB48E5 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,6 @@
 		4639BD672466FA6800124FE7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46BCD6C5246719A000EB48E5 /* Track.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +133,7 @@
 		4684BE7E2466FCE9004111F0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				46BCD6C824671F9A00EB48E5 /* Data */,
 				4684BE7F2466FCF9004111F0 /* Colors.swift */,
 			);
 			path = Core;
@@ -161,6 +163,31 @@
 				46BCD6C124670AFB00EB48E5 /* PlaylistsWidgetView.swift */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		46BCD6C724671F8B00EB48E5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		46BCD6C824671F9A00EB48E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				46BCD6C924671FDA00EB48E5 /* Repository */,
+				46BCD6C724671F8B00EB48E5 /* CoreData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		46BCD6C924671FDA00EB48E5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				46BCD6CC2467201500EB48E5 /* Repository.swift */,
+				46BCD6CA24671FF200EB48E5 /* TrackRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,16 +262,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */,
-				46BCD6C6246719A000EB48E5 /* Track.swift in Sources */,
 				4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */,
 				46BCD6BF24670AA100EB48E5 /* PlaylistCarouselView.swift in Sources */,
 				4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */,
 				4684BE802466FCF9004111F0 /* Colors.swift in Sources */,
+				46BCD6CB24671FF200EB48E5 /* TrackRepository.swift in Sources */,
 				4684BE7D2466FBB9004111F0 /* HomeScreenView.swift in Sources */,
 				46BCD6C224670AFB00EB48E5 /* PlaylistsWidgetView.swift in Sources */,
 				4639BD552466E5FD00124FE7 /* ContentView.swift in Sources */,
 				46BCD6BD2467061B00EB48E5 /* PlaylistBoxView.swift in Sources */,
 				4639BD532466E5FD00124FE7 /* Local_Media.xcdatamodeld in Sources */,
+				46BCD6CD2467201500EB48E5 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
