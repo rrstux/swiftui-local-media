@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeScreenView: View {
     var body: some View {
         NavigationView {
-            Text("da").foregroundColor(Color(UIColor(named: "Primary")!))
+            Text("da").foregroundColor(Color(Colors.get(for: .primary)))
             
             .navigationBarTitle("Home")
         }

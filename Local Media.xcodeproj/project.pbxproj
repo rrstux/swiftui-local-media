@@ -16,6 +16,7 @@
 		4639BD5D2466E60000124FE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4639BD5B2466E60000124FE7 /* LaunchScreen.storyboard */; };
 		4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */; };
 		4684BE7D2466FBB9004111F0 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684BE7C2466FBB9004111F0 /* HomeScreenView.swift */; };
+		4684BE802466FCF9004111F0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684BE7F2466FCF9004111F0 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4639BD5E2466E60000124FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		4684BE7C2466FBB9004111F0 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		4684BE7F2466FCF9004111F0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				4639BD4D2466E5FD00124FE7 /* AppDelegate.swift */,
 				4639BD4F2466E5FD00124FE7 /* SceneDelegate.swift */,
+				4684BE7E2466FCE9004111F0 /* Core */,
 				4639BD672466FA6800124FE7 /* Model */,
 				4639BD662466FA6300124FE7 /* View */,
 				4639BD562466E60000124FE7 /* Assets.xcassets */,
@@ -114,6 +117,14 @@
 				4684BE7C2466FBB9004111F0 /* HomeScreenView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		4684BE7E2466FCE9004111F0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4684BE7F2466FCF9004111F0 /* Colors.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */,
 				4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */,
 				4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */,
+				4684BE802466FCF9004111F0 /* Colors.swift in Sources */,
 				4684BE7D2466FBB9004111F0 /* HomeScreenView.swift in Sources */,
 				4639BD552466E5FD00124FE7 /* ContentView.swift in Sources */,
 				4639BD532466E5FD00124FE7 /* Local_Media.xcdatamodeld in Sources */,
