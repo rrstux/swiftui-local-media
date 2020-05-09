@@ -89,7 +89,7 @@ class DocumentBrowserViewController: UIDocumentPickerViewController {
 extension TestVC: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
     
-        let fileExists = FileManager.default.fileExists(atPath: urls[0].path)
+//        let fileExists = FileManager.default.fileExists(atPath: urls[0].path)
         do {
             UIApplication.shared.beginReceivingRemoteControlEvents()
             try AVAudioSession.sharedInstance().setCategory(.playback)
