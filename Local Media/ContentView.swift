@@ -8,9 +8,33 @@
 
 import SwiftUI
 
+struct DocumentBrowser: UIViewControllerRepresentable {
+
+    typealias UIViewControllerType = TestVC
+
+    func makeUIViewController(context: Context) -> TestVC {
+        return TestVC()
+    }
+
+    func updateUIViewController(_ uiViewController: TestVC, context: Context) {
+
+    }
+}
+
 struct ContentView: View {
+    
+    @State private var sheetShown = false
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            Button(action: {
+                self.sheetShown = true
+            }) {
+                Text("boi open the files")
+            }
+        }.sheet(isPresented: $sheetShown) {
+            DocumentBrowser()
+        }
     }
 }
 

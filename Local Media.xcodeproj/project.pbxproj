@@ -14,6 +14,7 @@
 		4639BD572466E60000124FE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4639BD562466E60000124FE7 /* Assets.xcassets */; };
 		4639BD5A2466E60000124FE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4639BD592466E60000124FE7 /* Preview Assets.xcassets */; };
 		4639BD5D2466E60000124FE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4639BD5B2466E60000124FE7 /* LaunchScreen.storyboard */; };
+		4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4639BD592466E60000124FE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4639BD5C2466E60000124FE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4639BD5E2466E60000124FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				4639BD5E2466E60000124FE7 /* Info.plist */,
 				4639BD512466E5FD00124FE7 /* Local_Media.xcdatamodeld */,
 				4639BD582466E60000124FE7 /* Preview Content */,
+				4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */,
 			);
 			path = "Local Media";
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */,
 				4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */,
+				4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */,
 				4639BD552466E5FD00124FE7 /* ContentView.swift in Sources */,
 				4639BD532466E5FD00124FE7 /* Local_Media.xcdatamodeld in Sources */,
 			);
