@@ -13,8 +13,11 @@ struct ContentView: View {
     @State private var sheetShown = false
     
     var body: some View {
-        NavigationView {
-            Text("da")
+        TabView {
+            HomeScreenView().tabItem {
+                Image(systemName: "house").foregroundColor(Color.red)
+                Text("Home")
+            }
         }
     }
 }
