@@ -14,7 +14,7 @@ struct TracksScreenView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
                 HStack {
                     Text("My Music")
                         .foregroundColor(Color(Colors.primary.get()))
@@ -22,23 +22,59 @@ struct TracksScreenView: View {
                         .font(.largeTitle)
                     Spacer()
                 }
-                //                ScrollView(.vertical, showsIndicators: false) {
+                .padding()
                 VStack {
-                    ForEach(viewModel.tracks, id: \.self) { (track: Track) in
-                        HStack {
-                            Text(track.artist!)
-                            Text("-")
-                            Text(track.title!)
+                    List {
+                        ForEach(viewModel.tracks, id: \.self) { (track: Track) in
+                            HStack {
+                                ZStack {
+                                    Rectangle().fill(Color(.tertiarySystemGroupedBackground)).frame(width: 50, height: 50)
+                                    Image(systemName: "music.note").foregroundColor(Color(Colors.primary.get()))
+                                }
+                                HStack {
+                                    Text(track.listName).fontWeight(.medium).lineLimit(2)
+                                }
+                                Spacer()
+                                
+                            }
+                        }.onDelete { index in
+                            print("Deleting")
                         }
                     }
                 }
-                //                }
                 Spacer()
+                ZStack {
+                    ZStack {
+                        Rectangle().fill(Color(.systemGray6)).padding(.top, 20)
+                        Rectangle().fill(Color(.systemGray6)).frame(height: 70).cornerRadius(10)
+                    }
+                    HStack {
+                        VStack {
+                            Text("N-Joi - Anthem mix 25 hours bici stop being a bici")
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(Colors.primary.get()))
+                        }.padding()
+                        Spacer()
+                        HStack {
+                            Image(systemName: "backward.end")
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                                .padding(.horizontal)
+                            Image(systemName: "pause.fill")
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                                .foregroundColor(Color(Colors.primary.get()))
+                                .padding(.horizontal)
+                            Image(systemName: "forward.end")
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                                .padding(.horizontal)
+                        }.padding()
+                    }
+                }.frame(height: 70)
             }
             .navigationBarHidden(true)
             .navigationBarTitle("My Music")
-            .padding()
-                
             .onAppear(perform: {
                 self.viewModel.loadTracks()
             })
@@ -62,8 +98,11 @@ extension TracksScreenView {
             track2.artist = "Johnny Cash"
             track2.title = "One"
             
-            tracks.append(contentsOf: [track1, track2])
+            let track3 = Track(context: context)
+            track3.artist = "Metallica"
+            track3.title = "The Day that Never Comes (remix) an plm fai said isad as id sai das as"
             
+            tracks.append(contentsOf: [track1, track2, track3])
         }
     }
 }
