@@ -31,6 +31,7 @@
 		46E366502468084A001A62BD /* TracksImportScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E3664F2468084A001A62BD /* TracksImportScreenView.swift */; };
 		46E3665324682BFE001A62BD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E3665224682BFE001A62BD /* Player.swift */; };
 		46E36655246835AA001A62BD /* Playable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E36654246835AA001A62BD /* Playable.swift */; };
+		46E3665824685C31001A62BD /* DocumentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E3665724685C30001A62BD /* DocumentsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		46E3664F2468084A001A62BD /* TracksImportScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksImportScreenView.swift; sourceTree = "<group>"; };
 		46E3665224682BFE001A62BD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		46E36654246835AA001A62BD /* Playable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playable.swift; sourceTree = "<group>"; };
+		46E3665724685C30001A62BD /* DocumentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		46BCD6C824671F9A00EB48E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				46E3665624685C11001A62BD /* Files */,
 				46BCD6C924671FDA00EB48E5 /* Repository */,
 				46BCD6C724671F8B00EB48E5 /* CoreData */,
 			);
@@ -247,6 +250,14 @@
 				46E36654246835AA001A62BD /* Playable.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		46E3665624685C11001A62BD /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				46E3665724685C30001A62BD /* DocumentsManager.swift */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				4684BE7D2466FBB9004111F0 /* HomeScreenView.swift in Sources */,
 				46BCD6C224670AFB00EB48E5 /* PlaylistsWidgetView.swift in Sources */,
 				4639BD552466E5FD00124FE7 /* ContentView.swift in Sources */,
+				46E3665824685C31001A62BD /* DocumentsManager.swift in Sources */,
 				46BCD6D52467EAA700EB48E5 /* Track.swift in Sources */,
 				46BCD6BD2467061B00EB48E5 /* PlaylistBoxView.swift in Sources */,
 				4639BD532466E5FD00124FE7 /* Local_Media.xcdatamodeld in Sources */,

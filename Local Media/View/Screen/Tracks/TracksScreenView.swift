@@ -18,7 +18,9 @@ struct TracksScreenView: View {
             VStack(spacing: 0) {
                 MusicListWidgetView()
                 Spacer()
-                BottomPlayerWidgetView()
+                if (store.player.playerState == .playing || store.player.playerState == .paused) {
+                    BottomPlayerWidgetView()
+                }
             }
             .navigationBarTitle("My Music", displayMode: .automatic)
             .navigationBarItems(trailing:

@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    
+    @EnvironmentObject var store: Store
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -17,16 +20,18 @@ struct HomeScreenView: View {
                     
                 }
                 Spacer()
-                BottomPlayerWidgetView()
+                if (store.player.playerState == .playing || store.player.playerState == .paused) {
+                    BottomPlayerWidgetView()
+                }
             }
             .navigationBarTitle("", displayMode: .automatic)
-        .navigationBarTitle("Home")
+            .navigationBarTitle("Home")
         }
     }
 }
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenView().environment(\.colorScheme, .dark)
+        HomeScreenView().environmentObject(Store()).environment(\.colorScheme, .dark)
     }
 }
