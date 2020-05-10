@@ -22,6 +22,8 @@
 		46BCD6C224670AFB00EB48E5 /* PlaylistsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6C124670AFB00EB48E5 /* PlaylistsWidgetView.swift */; };
 		46BCD6CB24671FF200EB48E5 /* TrackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6CA24671FF200EB48E5 /* TrackRepository.swift */; };
 		46BCD6CD2467201500EB48E5 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6CC2467201500EB48E5 /* Repository.swift */; };
+		46BCD6D02467E3C200EB48E5 /* TracksScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6CF2467E3C200EB48E5 /* TracksScreenView.swift */; };
+		46BCD6D22467E8E000EB48E5 /* MyMusicWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6D12467E8E000EB48E5 /* MyMusicWidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		46BCD6C124670AFB00EB48E5 /* PlaylistsWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsWidgetView.swift; sourceTree = "<group>"; };
 		46BCD6CA24671FF200EB48E5 /* TrackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRepository.swift; sourceTree = "<group>"; };
 		46BCD6CC2467201500EB48E5 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		46BCD6CF2467E3C200EB48E5 /* TracksScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksScreenView.swift; sourceTree = "<group>"; };
+		46BCD6D12467E8E000EB48E5 /* MyMusicWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		4684BE7A2466FB94004111F0 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				46BCD6CE2467E3AE00EB48E5 /* Tracks */,
 				4684BE7B2466FBA7004111F0 /* Home */,
 			);
 			path = Screen;
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				46BCD6C124670AFB00EB48E5 /* PlaylistsWidgetView.swift */,
+				46BCD6D12467E8E000EB48E5 /* MyMusicWidgetView.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -188,6 +194,14 @@
 				46BCD6CA24671FF200EB48E5 /* TrackRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		46BCD6CE2467E3AE00EB48E5 /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				46BCD6CF2467E3C200EB48E5 /* TracksScreenView.swift */,
+			);
+			path = Tracks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BCD6D22467E8E000EB48E5 /* MyMusicWidgetView.swift in Sources */,
+				46BCD6D02467E3C200EB48E5 /* TracksScreenView.swift in Sources */,
 				4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */,
 				4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */,
 				46BCD6BF24670AA100EB48E5 /* PlaylistCarouselView.swift in Sources */,

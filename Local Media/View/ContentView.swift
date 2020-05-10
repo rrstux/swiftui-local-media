@@ -14,6 +14,10 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
+            TracksScreenView(viewModel: TracksScreenView.ViewModel()).tabItem {
+                Image(systemName: "music.note.list")
+                Text("Tracks")
+            }
             HomeScreenView().tabItem {
                 Image(systemName: "house")
                 Text("Home")
