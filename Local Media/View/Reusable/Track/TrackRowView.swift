@@ -11,6 +11,7 @@ import SwiftUI
 struct TrackRowView: View {
     
     @State var track: Track
+    @EnvironmentObject var store: Store
     
     var body: some View {
         HStack {
@@ -26,6 +27,8 @@ struct TrackRowView: View {
                 Text(track.listName).fontWeight(.medium).lineLimit(2)
             }
             Spacer()
+        }.onTapGesture {
+            self.store.player.play(playable: self.track)
         }
     }
 }
@@ -38,6 +41,6 @@ struct TrackRowView_Previews: PreviewProvider {
         previewTrack.artwork = image.pngData()
         previewTrack.title = "Bongo Bong"
         previewTrack.artist = "Manu Chao"
-        return TrackRowView(track: previewTrack)
+        return TrackRowView(track: previewTrack).environmentObject(Store())
     }
 }

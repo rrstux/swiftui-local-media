@@ -24,3 +24,17 @@ extension Track {
         return nil
     }
 }
+
+extension Track: Playable {
+    
+    var playableFileUrl: URL? {
+        guard let fileUrlString = fileUrl, let url = URL(string: fileUrlString) else { return nil }
+        return url
+    }
+    
+    var playableTitle: String {
+        get {
+            return listName
+        }
+    }
+}

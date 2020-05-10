@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Combine
 
 class Store: ObservableObject {
     
     @Published var tracks: [Track] = []
+    @Published var player: Player = Player()
+    
+    var playerCancellable: AnyCancellable?
     
     init() {
         loadTracks()
+        
+        playerCancellable = player.objectWillChange.sink(receiveValue: {
+            self.objectWillChange.send()
+        })
     }
 }
 
@@ -55,7 +63,7 @@ extension Store {
             if FileManager.default.fileExists(atPath: url.path) {
                 let track = Track(context: context)
                 track.fileName = url.lastPathComponent
-                track.filePath = url.path
+                track.fileUrl = url.absoluteString
                 tracks.append(track)
             }
         }

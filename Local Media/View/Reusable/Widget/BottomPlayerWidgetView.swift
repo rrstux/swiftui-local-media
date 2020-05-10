@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct BottomPlayerWidgetView: View {
+    
+    @EnvironmentObject var store: Store
+    
     var body: some View {
         ZStack {
             ZStack {
@@ -17,7 +20,7 @@ struct BottomPlayerWidgetView: View {
             }
             HStack {
                 VStack {
-                    Text("N-Joi - Anthem mix 25 hours bici stop being a bici")
+                    Text("\(store.player.currentPlayable?.playableTitle ?? "")")
                         .fontWeight(.bold)
                         .foregroundColor(Color(Colors.primary.get()))
                 }.padding()
@@ -27,11 +30,15 @@ struct BottomPlayerWidgetView: View {
                         .resizable()
                         .frame(width: 15, height: 15)
                         .padding(.horizontal)
-                    Image(systemName: "pause.fill")
-                        .resizable()
-                        .frame(width: 15, height: 15)
-                        .foregroundColor(Color(Colors.primary.get()))
-                        .padding(.horizontal)
+                    Button(action: {
+                        self.store.player.toggle()
+                    }) {
+                        Image(systemName: self.store.player.playerState == .playing ? "pause.fill" : "play.fill")
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                            .foregroundColor(Color(Colors.primary.get()))
+                            .padding(.horizontal)
+                    }
                     Image(systemName: "forward.end")
                         .resizable()
                         .frame(width: 15, height: 15)
@@ -44,6 +51,6 @@ struct BottomPlayerWidgetView: View {
 
 struct BottomPlayerWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomPlayerWidgetView().environment(\.colorScheme, .dark)
+        BottomPlayerWidgetView().environmentObject(Store()).environment(\.colorScheme, .dark)
     }
 }

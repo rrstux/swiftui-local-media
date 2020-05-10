@@ -6,7 +6,7 @@
         <attribute name="artwork" optional="YES" attributeType="Binary"/>
         <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="fileName" optional="YES" attributeType="String"/>
-        <attribute name="filePath" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl" optional="YES" attributeType="String"/>
         <attribute name="genre" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
