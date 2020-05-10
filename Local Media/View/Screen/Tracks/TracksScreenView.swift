@@ -28,7 +28,7 @@ struct TracksScreenView: View {
                     Image(systemName: "waveform.path.badge.plus")
                 }.accentColor(Color(Colors.primary.get())))
         }.sheet(isPresented: $showImportSheet) {
-            TracksImportScreenView()
+            TracksImportScreenView().environmentObject(self.store)
         }
     }
 }

@@ -22,6 +22,7 @@ class DocumentBrowserViewController: UIDocumentPickerViewController, UIDocumentP
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         store?.loadTracks(from: urls)
+        
     }
 }
 
@@ -35,11 +36,13 @@ struct TracksImportScreenViewRepresentable: UIViewControllerRepresentable {
         let vc = DocumentBrowserViewController(documentTypes: [kUTTypeAudio as String,
                                                                kUTTypeFolder as String,
                                                                kUTTypeDirectory as String], in: .import)
-        vc.store = store
+//        vc.store = store
         return vc
     }
     
-    func updateUIViewController(_ uiViewController: DocumentBrowserViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: DocumentBrowserViewController, context: Context) {
+        uiViewController.store = store
+    }
 }
 
 struct TracksImportScreenView: View {
