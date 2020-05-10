@@ -75,17 +75,6 @@ class TestVC: UIViewController {
     
 }
 
-class DocumentBrowserViewController: UIDocumentPickerViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.view.backgroundColor = .red
-        self.allowsMultipleSelection = false
-
-    }
-}
-
 extension TestVC: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
     

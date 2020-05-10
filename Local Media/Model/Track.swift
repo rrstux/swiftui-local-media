@@ -11,7 +11,10 @@ import UIKit
 extension Track {
     
     var listName: String {
-        return "\(artist ?? "") - \(title ?? "")"
+        guard let artist = artist, let title = title else {
+            return fileName ?? ""
+        }
+        return "\(artist) - \(title)"
     }
     
     var artworkImage: UIImage? {

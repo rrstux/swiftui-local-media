@@ -28,6 +28,7 @@
 		46BCD6D92467F7D700EB48E5 /* MusicListWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6D82467F7D700EB48E5 /* MusicListWidgetView.swift */; };
 		46BCD6DB2467FB5200EB48E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6DA2467FB5200EB48E5 /* Store.swift */; };
 		46E3664E2467FFA0001A62BD /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E3664D2467FFA0001A62BD /* TrackRowView.swift */; };
+		46E366502468084A001A62BD /* TracksImportScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E3664F2468084A001A62BD /* TracksImportScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		46BCD6D82467F7D700EB48E5 /* MusicListWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListWidgetView.swift; sourceTree = "<group>"; };
 		46BCD6DA2467FB5200EB48E5 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		46E3664D2467FFA0001A62BD /* TrackRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRowView.swift; sourceTree = "<group>"; };
+		46E3664F2468084A001A62BD /* TracksImportScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksImportScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				46BCD6CF2467E3C200EB48E5 /* TracksScreenView.swift */,
+				46E3664F2468084A001A62BD /* TracksImportScreenView.swift */,
 			);
 			path = Tracks;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				46BCD6BF24670AA100EB48E5 /* PlaylistCarouselView.swift in Sources */,
 				4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */,
 				4684BE802466FCF9004111F0 /* Colors.swift in Sources */,
+				46E366502468084A001A62BD /* TracksImportScreenView.swift in Sources */,
 				46BCD6CB24671FF200EB48E5 /* TrackRepository.swift in Sources */,
 				46BCD6D72467F6FC00EB48E5 /* BottomPlayerWidgetView.swift in Sources */,
 				46E3664E2467FFA0001A62BD /* TrackRowView.swift in Sources */,

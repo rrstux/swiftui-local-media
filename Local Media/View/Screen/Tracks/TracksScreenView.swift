@@ -11,6 +11,7 @@ import SwiftUI
 struct TracksScreenView: View {
     
     @EnvironmentObject var store: Store
+    @State var showImportSheet: Bool = false
     
     var body: some View {
         NavigationView {
@@ -22,17 +23,18 @@ struct TracksScreenView: View {
             .navigationBarTitle("My Music", displayMode: .automatic)
             .navigationBarItems(trailing:
                 Button(action: {
-                    print("Import")
+                    self.showImportSheet = true
                 }) {
                     Image(systemName: "waveform.path.badge.plus")
                 }.accentColor(Color(Colors.primary.get())))
-            
+        }.sheet(isPresented: $showImportSheet) {
+            TracksImportScreenView()
         }
     }
 }
 
 struct TracksScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        TracksScreenView().environment(\.colorScheme, .dark)
+        TracksScreenView().environmentObject(Store()).environment(\.colorScheme, .dark)
     }
 }

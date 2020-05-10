@@ -48,4 +48,20 @@ extension Store {
         
         tracks.append(contentsOf: [track1, track2, track3, track4, track5])
     }
+    
+    func loadTracks(from urls: [URL]) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        for url in urls {
+            if FileManager.default.fileExists(atPath: url.path) {
+                let track = Track(context: context)
+                track.fileName = url.lastPathComponent
+                track.filePath = url.path
+                tracks.append(track)
+            }
+        }
+    }
+    
+    func loadTracks(from path: String) {
+        
+    }
 }
