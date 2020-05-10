@@ -97,7 +97,7 @@ extension DocumentsManager {
                 print("🛑 Could not copy \(url.lastPathComponent) into \(directory.rawValue) because it exists already.")
             } else {
                 if copyFile(url: url, toDirectory: directory) {
-                    copiedFiles.append(url)
+                    copiedFiles.append(directory.getUrl().appendingPathComponent(url.lastPathComponent))
                 }
             }
         }

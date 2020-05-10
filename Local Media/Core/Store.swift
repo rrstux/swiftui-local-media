@@ -28,33 +28,18 @@ class Store: ObservableObject {
 extension Store {
     
     func loadTracks() {
-        print("Loading")
+        print("🔄 Fetching tracks...")
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let track1 = Track(context: context)
-        track1.artist = "2Pac"
-        track1.title = "Lil' Homies"
-        track1.artwork = UIImage(named: "MockPac")?.pngData()
+        var tracks: [Track] = []
+        do {
+            tracks = try context.fetch(Track.fetchRequest())
+            print("✅ Fetched tracks. Count: \(tracks.count)")
+        } catch {
+            print("🛑 Could not fetch Tracks!")
+        }
         
-        let track2 = Track(context: context)
-        track2.artist = "Johnny Cash"
-        track2.title = "One"
-        track2.artwork = UIImage(named: "MockJohnnyCash")?.pngData()
-        
-        let track3 = Track(context: context)
-        track3.artist = "Metallica"
-        track3.title = "The Day that Never Comes (remix)"
-        
-        let track4 = Track(context: context)
-        track4.artist = "Manu Chao"
-        track4.title = "Bongo Bong"
-        track4.artwork = UIImage(named: "MockManuChao")?.pngData()
-        
-        let track5 = Track(context: context)
-        track5.artist = "James Brown"
-        track5.title = "Sex Machine"
-        
-        tracks.append(contentsOf: [track1, track2, track3, track4, track5])
+        self.tracks = tracks
     }
     
     func loadTracks(from urls: [URL]) {
@@ -65,6 +50,12 @@ extension Store {
             track.fileName = importedFile.lastPathComponent
             track.fileUrl = importedFile.absoluteString
             tracks.append(track)
+        }
+        do {
+            try context.save()
+            print("✅ Saved context with new tracks.")
+        } catch {
+            print("🛑 Could not save context with new tracks due to error: \(error)")
         }
     }
     

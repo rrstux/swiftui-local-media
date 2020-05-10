@@ -24,7 +24,11 @@ struct TrackRowView: View {
                 }
             }.frame(width: 50, height: 50)
             HStack {
-                Text(track.listName).fontWeight(.medium).lineLimit(2)
+                if (store.player.currentPlayable?.playableTitle == track.playableTitle) {
+                    Text(track.listName).fontWeight(.medium).lineLimit(2).foregroundColor(Color(Colors.primary.get()))
+                } else {
+                    Text(track.listName).fontWeight(.medium).lineLimit(2)
+                }
             }
             Spacer()
         }.onTapGesture {

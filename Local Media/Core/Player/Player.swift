@@ -28,7 +28,7 @@ class Player: ObservableObject {
     }
     
     func play(playable: Playable) {
-        guard let fileUrl = playable.playableFileUrl else {return }
+        guard let fileUrl = playable.playableFileUrl else { return }
         do {
             player = try AVAudioPlayer(contentsOf: fileUrl)
             player.stop()
