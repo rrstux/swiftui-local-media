@@ -11,16 +11,15 @@ import UIKit
 class Store: ObservableObject {
     
     @Published var tracks: [Track] = []
-    var timer: Timer?
     
     init() {
-        
+        loadTracks()
     }
 }
 
 extension Store {
     
-    @objc func loadTracks() {
+    func loadTracks() {
         print("Loading")
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let track1 = Track(context: context)
@@ -36,8 +35,5 @@ extension Store {
         track3.title = "The Day that Never Comes (remix) an plm fai said isad as id sai das as"
         
         tracks.append(contentsOf: [track1, track2, track3])
-        
-        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(loadTracks), userInfo: nil, repeats: false)
-        
     }
 }

@@ -10,10 +10,12 @@ import SwiftUI
 
 struct MusicListWidgetView: View {
     
+    @EnvironmentObject var store: Store
+    
     var body: some View {
         VStack {
             List {
-                ForEach([], id: \.self) { (track: Track) in
+                ForEach(store.tracks, id: \.self) { (track: Track) in
                     HStack {
                         ZStack {
                             Rectangle().fill(Color(.tertiarySystemGroupedBackground)).frame(width: 50, height: 50)
@@ -35,6 +37,6 @@ struct MusicListWidgetView: View {
 
 struct MusicListWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        MusicListWidgetView()
+        MusicListWidgetView().environmentObject(Store()).environment(\.colorScheme, .dark)
     }
 }
