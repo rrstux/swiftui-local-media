@@ -48,7 +48,7 @@ extension Store {
         for importedFile in importedFiles {
             let track = Track(context: context)
             track.fileName = importedFile.lastPathComponent
-            track.fileUrl = importedFile.absoluteString
+            track.fileUrl = "\(DirectoryChildrenDirs.musicDirectory.rawValue)/\(importedFile.lastPathComponent)"
             tracks.append(track)
         }
         do {

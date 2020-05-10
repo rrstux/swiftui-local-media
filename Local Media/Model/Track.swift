@@ -28,8 +28,8 @@ extension Track {
 extension Track: Playable {
     
     var playableFileUrl: URL? {
-        guard let fileUrlString = fileUrl, let url = URL(string: fileUrlString) else { return nil }
-        return url
+        let documentsDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        return documentsDir.appendingPathComponent(fileUrl ?? "")
     }
     
     var playableTitle: String {

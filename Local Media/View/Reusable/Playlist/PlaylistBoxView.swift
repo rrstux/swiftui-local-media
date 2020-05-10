@@ -10,7 +10,6 @@ import SwiftUI
 
 struct PlaylistBoxView: View {
     
-    @ObservedObject var viewModel: ViewModel
     @State private var title = "Workout Playlist 💪🏻"
     
     var body: some View {
@@ -27,7 +26,7 @@ struct PlaylistBoxView: View {
                 HStack {
                     HStack {
                         // stats
-                        Text("tracks: \(viewModel.tracks.count)")
+                        Text("tracks")
                     }
                     Spacer()
                     Button(action: {
@@ -46,35 +45,11 @@ struct PlaylistBoxView: View {
         .onTapGesture {
             self.title = "tapped"
         }
-        .onAppear {
-            self.viewModel.loadTracks()
-        }
-    }
-}
-
-extension PlaylistBoxView {
-    class ViewModel: ObservableObject {
-        @Published private(set) var tracks: [Track] = []
-        
-        func loadTracks() {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            
-            let da = Track(context: context)
-            da.title = "The Day that Never Comes"
-            da.artist = "Metallica"
-            do {
-                try context.save()
-            } catch {
-                print("Could not save...")
-            }
-            
-            
-        }
     }
 }
 
 struct PlaylistBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistBoxView(viewModel: PlaylistBoxView.ViewModel()).environment(\.colorScheme, .dark)
+        PlaylistBoxView().environment(\.colorScheme, .dark)
     }
 }
