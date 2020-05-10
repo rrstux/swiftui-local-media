@@ -12,11 +12,15 @@ struct BottomPlayerWidgetView: View {
     
     @EnvironmentObject var store: Store
     
+    var bottomLayerHeight: CGFloat = 70
+    var progressBarHeight: CGFloat = 3
+    
     var body: some View {
         ZStack {
             ZStack {
                 Rectangle().fill(Color(.systemGray6)).padding(.top, 20)
-                Rectangle().fill(Color(.systemGray6)).frame(height: 70).cornerRadius(10)
+                Rectangle().fill(Color(.systemGray6)).frame(height: bottomLayerHeight).cornerRadius(10)
+                TrackProgressView(progressBarHeight: progressBarHeight).padding(.top, bottomLayerHeight-progressBarHeight)
             }
             HStack {
                 VStack {
