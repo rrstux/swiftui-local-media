@@ -11,13 +11,6 @@ import SwiftUI
 struct PlaylistsWidgetView: View {
     var body: some View {
         VStack {
-            HStack {
-                Text("Playlists")
-                    .foregroundColor(Color(Colors.primary.get()))
-                    .fontWeight(.medium)
-                    .font(.largeTitle)
-                Spacer()
-            }
             PlaylistCarouselView()
             Spacer()
         }
