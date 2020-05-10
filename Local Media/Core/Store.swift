@@ -59,25 +59,13 @@ extension Store {
     
     func loadTracks(from urls: [URL]) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let importedFiles = DocumentsManager.shared.copyFilesToMusicDir(from: urls)
-//        for url in urls {
-//            if FileManager.default.fileExists(atPath: url.path) {
-//                do {
-//                    let documentsDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//                    let importedFilePath = documentsDir.appendingPathComponent(url.lastPathComponent)
-//                    try FileManager.default.copyItem(at: url, to: importedFilePath)
-//
-//                    let track = Track(context: context)
-//                    track.fileName = importedFilePath.lastPathComponent
-//                    track.fileUrl = importedFilePath.absoluteString
-//
-//                    print(importedFilePath.absoluteString)
-//                    tracks.append(track)
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
+        let importedFiles = DocumentsManager.shared.copyFiles(from: urls, toDirectory: .musicDirectory)
+        for importedFile in importedFiles {
+            let track = Track(context: context)
+            track.fileName = importedFile.lastPathComponent
+            track.fileUrl = importedFile.absoluteString
+            tracks.append(track)
+        }
     }
     
     func loadTracks(from path: String) {

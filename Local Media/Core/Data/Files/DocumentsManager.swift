@@ -10,17 +10,13 @@ import Foundation
 
 enum DirectoryChildrenDirs: String, CaseIterable {
     case musicDirectory = "Music"
-//
-//    func getDirectory() -> URL {
-//        let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//        switch self {
-//        case .musicDirectory:
-//            if (!directoryExists()) {
-//
-//            }
-////            return directoryExists()
-//        }
-//    }
+
+    func getUrl() -> URL {
+        let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        switch self {
+        case .musicDirectory: return documentsUrl.appendingPathComponent("\(self.rawValue)")
+        }
+    }
     
     func directoryExists() -> Bool {
         let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -69,29 +65,42 @@ class DocumentsManager {
 
 extension DocumentsManager {
     
-    func copyFileToMusicDir(url: URL) {
-//        if FileManager.default.fileExists(atPath: musicDirUrl.appendingPathComponent(url.lastPathComponent).absoluteString) {
-//            print("Bai exista deja ")
-//        } else if FileManager.default.fileExists(atPath: url.path) {
-//            // We will copy the file into our Music dir.
-//            do {
-//                let futureImportPath = musicDirUrl.appendingPathComponent(url.lastPathComponent)
-//                try FileManager.default.copyItem(at: url, to: futureImportPath)
-//                print("Copied.")
-//            } catch {
-//                print("Crashed like a bitch \(error)")
-//                // silent crash :)
-//            }
-//        }
+    func fileExists(atPath path: String) -> Bool {
+        let fileManager = FileManager.default
+        return fileManager.fileExists(atPath: path)
+    }
+    
+    func copyFile(url: URL, toDirectory: DirectoryChildrenDirs) -> Bool {
+        let fileManager = FileManager.default
+        
+        if fileManager.fileExists(atPath: url.path) {
+            do {
+                let futureImportPath = toDirectory.getUrl().appendingPathComponent(url.lastPathComponent)
+                try fileManager.copyItem(at: url, to: futureImportPath)
+                print("✅ \(url.lastPathComponent) was copied into \(toDirectory.rawValue).")
+                return true
+            } catch {
+                print("🛑 Could not copy \(url.lastPathComponent) into \(toDirectory.rawValue) due to error: \(error)")
+                return false
+            }
+        } else {
+            return false
+        }
         
     }
     
-    func copyFilesToMusicDir(from urls: [URL]) -> [URL] {
+    func copyFiles(from urls: [URL], toDirectory directory: DirectoryChildrenDirs) -> [URL] {
         createDirectories()
+        var copiedFiles: [URL] = []
         for url in urls {
-            print("Copying ")
-            copyFileToMusicDir(url: url)
+            if fileExists(atPath: directory.getUrl().appendingPathComponent(url.lastPathComponent).path) {
+                print("🛑 Could not copy \(url.lastPathComponent) into \(directory.rawValue) because it exists already.")
+            } else {
+                if copyFile(url: url, toDirectory: directory) {
+                    copiedFiles.append(url)
+                }
+            }
         }
-        return []
+        return copiedFiles
     }
 }
