@@ -6,11 +6,18 @@
 //  Copyright © 2020 codecontrive. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Track {
     
     var listName: String {
         return "\(artist ?? "") - \(title ?? "")"
+    }
+    
+    var artworkImage: UIImage? {
+        if let artworkData = artwork {
+            return UIImage(data: artworkData)
+        }
+        return nil
     }
 }

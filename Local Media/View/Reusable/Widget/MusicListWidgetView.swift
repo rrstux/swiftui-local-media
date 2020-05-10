@@ -16,17 +16,7 @@ struct MusicListWidgetView: View {
         VStack {
             List {
                 ForEach(store.tracks, id: \.self) { (track: Track) in
-                    HStack {
-                        ZStack {
-                            Rectangle().fill(Color(.tertiarySystemGroupedBackground)).frame(width: 50, height: 50)
-                            Image(systemName: "music.note").foregroundColor(Color(Colors.primary.get()))
-                        }
-                        HStack {
-                            Text(track.listName).fontWeight(.medium).lineLimit(2)
-                        }
-                        Spacer()
-                        
-                    }
+                    TrackRowView(track: track)
                 }.onDelete { index in
                     print("Deleting")
                 }

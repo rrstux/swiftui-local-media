@@ -27,6 +27,7 @@
 		46BCD6D72467F6FC00EB48E5 /* BottomPlayerWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6D62467F6FC00EB48E5 /* BottomPlayerWidgetView.swift */; };
 		46BCD6D92467F7D700EB48E5 /* MusicListWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6D82467F7D700EB48E5 /* MusicListWidgetView.swift */; };
 		46BCD6DB2467FB5200EB48E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6DA2467FB5200EB48E5 /* Store.swift */; };
+		46E3664E2467FFA0001A62BD /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E3664D2467FFA0001A62BD /* TrackRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		46BCD6D62467F6FC00EB48E5 /* BottomPlayerWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPlayerWidgetView.swift; sourceTree = "<group>"; };
 		46BCD6D82467F7D700EB48E5 /* MusicListWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListWidgetView.swift; sourceTree = "<group>"; };
 		46BCD6DA2467FB5200EB48E5 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		46E3664D2467FFA0001A62BD /* TrackRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				46BCD6C024670AEB00EB48E5 /* Widget */,
 				46BCD6BB246705EF00EB48E5 /* Playlist */,
+				46E3664C2467FF82001A62BD /* Music */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -219,6 +222,14 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		46E3664C2467FF82001A62BD /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				46E3664D2467FFA0001A62BD /* TrackRowView.swift */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 				4684BE802466FCF9004111F0 /* Colors.swift in Sources */,
 				46BCD6CB24671FF200EB48E5 /* TrackRepository.swift in Sources */,
 				46BCD6D72467F6FC00EB48E5 /* BottomPlayerWidgetView.swift in Sources */,
+				46E3664E2467FFA0001A62BD /* TrackRowView.swift in Sources */,
 				46BCD6D92467F7D700EB48E5 /* MusicListWidgetView.swift in Sources */,
 				4684BE7D2466FBB9004111F0 /* HomeScreenView.swift in Sources */,
 				46BCD6C224670AFB00EB48E5 /* PlaylistsWidgetView.swift in Sources */,
