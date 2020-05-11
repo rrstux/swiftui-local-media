@@ -5,8 +5,8 @@
         <attribute name="artist" attributeType="String" defaultValueString=""/>
         <attribute name="artwork" optional="YES" attributeType="Binary"/>
         <attribute name="comment" attributeType="String" defaultValueString=""/>
-        <attribute name="fileName" optional="YES" attributeType="String"/>
-        <attribute name="fileUrl" optional="YES" attributeType="String"/>
+        <attribute name="fileName" attributeType="String" defaultValueString=""/>
+        <attribute name="fileUrl" attributeType="String" defaultValueString=""/>
         <attribute name="genre" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="title" attributeType="String" defaultValueString=""/>
         <attribute name="year" attributeType="Integer 16" defaultValueString="2020" usesScalarValueType="YES"/>
