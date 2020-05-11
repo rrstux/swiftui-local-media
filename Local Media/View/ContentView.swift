@@ -21,8 +21,8 @@ struct ContentView: View {
                 Text("Tracks")
             }
             HomeScreenView().tabItem {
-                Image(systemName: "house")
-                Text("Home")
+                Image(systemName: "list.dash")
+                Text("Playlists")
             }
             Text("Profile").tabItem {
                 Image(systemName: "person")

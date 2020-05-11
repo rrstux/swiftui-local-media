@@ -54,15 +54,14 @@ class TestVC: UIViewController {
         var nowPlayingInfo = [String : Any]()
         nowPlayingInfo[MPMediaItemPropertyTitle] = "Robica Smecherul"
 
-        if let image = UIImage(named: "lockscreen") {
-            nowPlayingInfo[MPMediaItemPropertyArtwork] =
-                MPMediaItemArtwork(boundsSize: image.size) { size in
-                    return image
-            }
-        }
+//        nowPlayingInfo[MPMediaItemPropertyArtwork] =
+//                MPMediaItemArtwork(boundsSize: CGSize(width: 100, height: 100) { size in
+//                    return pla
+//            }
+        
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = player!.currentTime
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = 10
-        nowPlayingInfo[MPMediaItemPropertyArtist] = "Robica Cantaretul"
+        nowPlayingInfo[MPMediaItemPropertyArtist] = nil
         nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: CGSize(width: 50, height: 50), requestHandler: { size -> UIImage in
             return UIImage(systemName: "trash")!
         })

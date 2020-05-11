@@ -6,7 +6,9 @@
 //  Copyright © 2020 codecontrive. All rights reserved.
 //
 
+import UIKit
 import AVFoundation
+import MediaPlayer
 import Combine
 
 enum PlayerState {
@@ -25,11 +27,14 @@ class Player: ObservableObject {
     
     init() {
         player = AVAudioPlayer()
+        do {
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch {}
     }
     
     func play(playable: Playable) {
         
-        print("😂 = ", playable.playableFileUrl)
         guard let fileUrl = playable.playableFileUrl else { return }
         
         do {
@@ -39,6 +44,7 @@ class Player: ObservableObject {
             player.play()
             playerState = .playing
             currentPlayable = playable
+            setupNowPlaying()
         } catch {
             playerState = .noTrack
             currentPlayable = nil
@@ -67,5 +73,29 @@ class Player: ObservableObject {
         } else if (playerState == .paused) {
             unpause()
         }
+    }
+}
+
+extension Player {
+    
+    func setupNowPlaying() {
+        guard let playable = currentPlayable else { return }
+        var nowPlayingInfo = [String : Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = playable.playableTitle
+        
+        if let artwork = playable.playableArtwork {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size, requestHandler: { size in
+                return artwork
+            })
+        }
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = player.currentTime
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = player.duration
+        nowPlayingInfo[MPMediaItemPropertyArtist] = playable.playableArtist
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: CGSize(width: 50, height: 50), requestHandler: { size -> UIImage in
+            return UIImage(systemName: "trash")!
+        })
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = player.rate
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
 }

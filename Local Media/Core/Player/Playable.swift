@@ -6,11 +6,14 @@
 //  Copyright © 2020 codecontrive. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol Playable {
     
     /** Properties that are going to be shown in the player.  */
     var playableFileUrl: URL? {get}
     var playableTitle: String {get}
+    
+    var playableArtist: String? {get}
+    var playableArtwork: UIImage? {get}
 }

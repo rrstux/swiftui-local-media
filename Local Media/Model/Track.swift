@@ -37,4 +37,16 @@ extension Track: Playable {
             return listName
         }
     }
+    
+    var playableArtist: String? {
+        get {
+            return artist
+        }
+    }
+    
+    var playableArtwork: UIImage? {
+        get {
+            return artworkImage
+        }
+    }
 }
