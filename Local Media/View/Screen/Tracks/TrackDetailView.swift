@@ -22,11 +22,22 @@ struct TrackDetailView: View {
     var body: some View {
         NavigationView {
             Form {
+                HStack {
+                    Spacer()
+                    Image(uiImage: UIImage(named: "MockPac")!).resizable().frame(width: 250, height: 250)
+                    Spacer()
+                }
                 Section(header: Text("Artwork")) {
-                    VStack {
-                        Text("upload photo")
+                    Button(action: {
+                        print("Chaning artwork..")
+                    }) {
+                        Text("Change artwork...")
                     }
-
+                    Button(action: {
+                        print("Chaning artwork..")
+                    }) {
+                        Text("Delete artwork...").foregroundColor(.red)
+                    }
                 }
                 Section(header: Text("Nice to have details ♥️"),
                         footer: Text("Nice to have details will provide you some good user interface experience for the long run.")) {
@@ -72,7 +83,7 @@ struct TrackDetailView: View {
                     Toggle("Use as blurred background on the Play screen", isOn: Binding.constant(true))
                     Toggle("Always play on repeat", isOn: Binding.constant(true))
                     Toggle("Count # of plays", isOn: Binding.constant(true))
-                    
+                    Stepper("Volume on play: 100", value: Binding.constant(30), in: 0...100)
                 }
                 
                 Section(header: Text("File Details "), footer: Text("")) {
@@ -109,8 +120,6 @@ struct TrackDetailView: View {
                 }
                 
             }
-                
-                
             .navigationBarTitle(track.playableTitle)
         }
     }
