@@ -24,11 +24,13 @@ struct TracksScreenView: View {
             }
             .navigationBarTitle("My Music", displayMode: .automatic)
             .navigationBarItems(trailing:
-                Button(action: {
-                    self.showImportSheet = true
-                }) {
-                    Image(systemName: "waveform.path.badge.plus")
-                }.accentColor(Color(Colors.primary.get())))
+                HStack {
+                    Button(action: {
+                        self.showImportSheet = true
+                    }) {
+                        Image(systemName: "waveform.path.badge.plus")
+                    }.accentColor(Color(Colors.primary.get()))
+                })
         }.sheet(isPresented: $showImportSheet) {
             TracksImportScreenView().environmentObject(self.store)
         }

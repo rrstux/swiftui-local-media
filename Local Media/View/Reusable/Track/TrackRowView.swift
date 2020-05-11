@@ -12,6 +12,7 @@ struct TrackRowView: View {
     
     @State var track: Track
     @EnvironmentObject var store: Store
+    @State var showEditSheet = false
     
     var body: some View {
         HStack {
@@ -31,8 +32,15 @@ struct TrackRowView: View {
                 }
             }
             Spacer()
-        }.onTapGesture {
+        }
+        .background(Color(.systemBackground))
+        .onTapGesture(count: 1) {
             self.store.player.play(playable: self.track)
+        }.onLongPressGesture {
+            self.showEditSheet = true
+        }
+        .sheet(isPresented: $showEditSheet) {
+            TrackDetailView(track: self.$track)
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462815D22469BC430072D0C4 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D12469BC430072D0C4 /* TrackDetailView.swift */; };
 		4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD4D2466E5FD00124FE7 /* AppDelegate.swift */; };
 		4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD4F2466E5FD00124FE7 /* SceneDelegate.swift */; };
 		4639BD532466E5FD00124FE7 /* Local_Media.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD512466E5FD00124FE7 /* Local_Media.xcdatamodeld */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		462815D12469BC430072D0C4 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		4639BD4A2466E5FD00124FE7 /* Local Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local Media.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4639BD4D2466E5FD00124FE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4639BD4F2466E5FD00124FE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				46BCD6CF2467E3C200EB48E5 /* TracksScreenView.swift */,
 				46E3664F2468084A001A62BD /* TracksImportScreenView.swift */,
+				462815D12469BC430072D0C4 /* TrackDetailView.swift */,
 			);
 			path = Tracks;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				46BCD6D02467E3C200EB48E5 /* TracksScreenView.swift in Sources */,
 				4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */,
 				46BCD6DB2467FB5200EB48E5 /* Store.swift in Sources */,
+				462815D22469BC430072D0C4 /* TrackDetailView.swift in Sources */,
 				4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */,
 				46BCD6BF24670AA100EB48E5 /* PlaylistCarouselView.swift in Sources */,
 				4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */,

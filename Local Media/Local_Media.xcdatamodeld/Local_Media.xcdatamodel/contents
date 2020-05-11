@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Track" representedClassName="Track" syncable="YES" codeGenerationType="class">
-        <attribute name="album" optional="YES" attributeType="String"/>
-        <attribute name="artist" optional="YES" attributeType="String"/>
+        <attribute name="album" attributeType="String" defaultValueString=""/>
+        <attribute name="artist" attributeType="String" defaultValueString=""/>
         <attribute name="artwork" optional="YES" attributeType="Binary"/>
-        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="comment" attributeType="String" defaultValueString=""/>
         <attribute name="fileName" optional="YES" attributeType="String"/>
         <attribute name="fileUrl" optional="YES" attributeType="String"/>
-        <attribute name="genre" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="genre" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <attribute name="year" attributeType="Integer 16" defaultValueString="2020" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="Track" positionX="-54" positionY="9" width="128" height="178"/>

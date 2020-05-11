@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
+
+
 
 extension Track {
     
     var listName: String {
-        guard let artist = artist, let title = title else {
+        guard let artist = artist, let title = title, artist.count > 0, title.count > 0 else {
             return fileName ?? ""
         }
         return "\(artist) - \(title)"

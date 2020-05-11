@@ -17,7 +17,8 @@ struct MusicListWidgetView: View {
             List {
                 ForEach(store.tracks, id: \.self) { (track: Track) in
                     TrackRowView(track: track)
-                }.onDelete { index in
+                }
+                .onDelete { index in
                     print("Deleting")
                 }
             }
