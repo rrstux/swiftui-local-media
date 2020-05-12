@@ -11,6 +11,7 @@ import CoreData
 
 struct TrackDetailView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var track: Track
     
     @State var genres: [String] = [
@@ -27,45 +28,7 @@ struct TrackDetailView: View {
             Form {
                 TrackDetailArtworkView(image: $track.artworkImage)
                 TrackDetailSectionArtwork()
-                Section(header: Text("Nice to have details ♥️"),
-                        footer: Text("Nice to have details will provide you some good user interface experience for the long run.")) {
-                            
-                            HStack {
-                                HStack {
-                                    Text("Title")
-                                    Spacer()
-                                }.frame(width: 60)
-                                TextField("Title", text: Binding($track.title)!)
-                            }
-                            HStack {
-                                HStack {
-                                    Text("Artist")
-                                    Spacer()
-                                }.frame(width: 60)
-                                TextField("Artist", text: Binding($track.artist)!)
-                            }
-                            HStack {
-                                HStack {
-                                    Text("Album")
-                                    Spacer()
-                                }.frame(width: 60)
-                                TextField("Artist", text: Binding($track.album)!)
-                            }
-                            HStack {
-                                HStack {
-                                    Text("Year")
-                                    Spacer()
-                                }.frame(width: 60)
-                                TextField("Year", text: Binding.constant("2000"))
-                            }
-                            Picker(selection: $genres, label: Text("Genre")) {
-                                ForEach(genres, id: \.self) { (genre: String) in
-                                    Text(genre).tag(genre)
-                                    
-                                }
-                                .navigationBarTitle("Select Gender")
-                            }
-                }
+                TrackDetailSectionTrackDetailView()
                 
                 Section(header: Text("Options")) {
                     Toggle("Use as blurred background on the Play screen", isOn: Binding.constant(true))
@@ -108,6 +71,17 @@ struct TrackDetailView: View {
                 }
                 
             }
+            .navigationBarItems(trailing: HStack {
+                Button(action: {
+                    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                    do {
+                        try context.save()
+                        self.presentationMode.wrappedValue.dismiss()
+                    } catch {}
+                }) {
+                    Text("Save").foregroundColor(Color(Colors.primary.get()))
+                }
+            })
             .navigationBarTitle(track.playableTitle)
         }
     }

@@ -11,7 +11,7 @@ import SwiftUI
 struct TrackDetailArtworkView: View {
     
     @Binding var image: UIImage?
-    
+    @State var showFullScreenImage = false
     var body: some View {
         HStack {
             Spacer()
@@ -19,6 +19,9 @@ struct TrackDetailArtworkView: View {
                 Image(uiImage: image!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .onTapGesture {
+                        self.showFullScreenImage = true
+                    }
             } else {
                 VStack {
                     Image(systemName: "music.note")
@@ -38,7 +41,11 @@ struct TrackDetailArtworkView: View {
                 }
             }
             Spacer()
-        }.frame(height: 250)
+        }
+        .frame(height: 250)
+        .sheet(isPresented: $showFullScreenImage) {
+            TrackDetailFullScreenImageView(image: self.image!)
+        }
     }
 }
 

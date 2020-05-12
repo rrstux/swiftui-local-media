@@ -18,7 +18,10 @@ struct TrackDetailSectionArtwork: View {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var body: some View {
-        Section(header: Text("Artwork")) {
+        Section(header: VStack(alignment: .leading) {
+            Text("Artwork")
+            Text("Once changed, the artwork will save automatically.").font(.footnote)
+        }) {
             Button(action: {
                 self.showImagePicker = true
             }) {
