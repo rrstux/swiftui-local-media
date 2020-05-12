@@ -10,8 +10,9 @@ import SwiftUI
 
 struct TrackRowView: View {
     
-    @State var track: Track
     @EnvironmentObject var store: Store
+    
+    @Binding var track: Track
     @State var showEditSheet = false
     
     var body: some View {
@@ -40,7 +41,7 @@ struct TrackRowView: View {
             self.showEditSheet = true
         }
         .sheet(isPresented: $showEditSheet) {
-            TrackDetailView(track: self.$track)
+            TrackDetailView(track: self.$track).environmentObject(self.track)
         }
     }
 }
@@ -53,6 +54,6 @@ struct TrackRowView_Previews: PreviewProvider {
         previewTrack.artwork = image.pngData()
         previewTrack.title = "Bongo Bong"
         previewTrack.artist = "Manu Chao"
-        return TrackRowView(track: previewTrack).environmentObject(Store())
+        return TrackRowView(track: Binding.constant(previewTrack)).environmentObject(Store())
     }
 }

@@ -16,7 +16,7 @@ struct MusicListWidgetView: View {
         VStack {
             List {
                 ForEach(store.tracks, id: \.self) { (track: Track) in
-                    TrackRowView(track: track)
+                    TrackRowView(track: Binding.constant(track))
                 }
                 .onDelete { index in
                     print("Deleting")

@@ -9,48 +9,10 @@
 import SwiftUI
 import CoreData
 
-struct ImagePicker: UIViewControllerRepresentable {
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Binding var image: UIImage?
-    
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: ImagePicker
-
-        init(_ parent: ImagePicker) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let uiImage = info[.originalImage] as? UIImage {
-                parent.image = uiImage
-            }
-            self.parent.presentationMode.wrappedValue.dismiss()
-        }
-    }
-    
-    typealias UIViewControllerType = UIImagePickerController
-    
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let vc = UIImagePickerController()
-        vc.delegate = context.coordinator
-        return vc
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-        
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        let coordinator = Coordinator(self)
-        return coordinator
-    }
-    
-}
-
 struct TrackDetailView: View {
     
     @Binding var track: Track
+    
     @State var genres: [String] = [
         "Rock",
         "Rap",
@@ -60,37 +22,11 @@ struct TrackDetailView: View {
     ]
     @State var showImagePicker = false
     
-    fileprivate func SectionArtwork() -> some View {
-        Section(header: Text("Artwork")) {
-            Button(action: {
-                self.showImagePicker = true
-            }) {
-                Text("\(track.artworkImage == nil ? "Add" : "Change") artwork...")
-            }
-            Button(action: {
-                print("Chaning artwork..")
-            }) {
-                Text("Delete artwork...")
-            }
-            .disabled(track.artworkImage == nil)
-        }.sheet(isPresented: $showImagePicker) {
-            ImagePicker(image: self.$track.artworkImage).onDisappear {
-                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-                do {
-                    try context.save()
-                    print("✅ saved")
-                } catch {
-                    print("🛑 \(error)")
-                }
-            }
-        }
-    }
-    
     var body: some View {
         NavigationView {
             Form {
                 ArtworkView(image: $track.artworkImage)
-                SectionArtwork()
+                SectionArtwork(track: $track)
                 Section(header: Text("Nice to have details ♥️"),
                         footer: Text("Nice to have details will provide you some good user interface experience for the long run.")) {
                             
