@@ -19,6 +19,7 @@
 		4639BD5D2466E60000124FE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4639BD5B2466E60000124FE7 /* LaunchScreen.storyboard */; };
 		4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */; };
 		465BDC9C246B1FFC00C97437 /* TrackDetailArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDC9B246B1FFC00C97437 /* TrackDetailArtworkView.swift */; };
+		465BDC9E246B239900C97437 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDC9D246B239900C97437 /* UIImage.swift */; };
 		4684BE7D2466FBB9004111F0 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684BE7C2466FBB9004111F0 /* HomeScreenView.swift */; };
 		4684BE802466FCF9004111F0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684BE7F2466FCF9004111F0 /* Colors.swift */; };
 		46BCD6BD2467061B00EB48E5 /* PlaylistBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6BC2467061B00EB48E5 /* PlaylistBoxView.swift */; };
@@ -55,6 +56,7 @@
 		4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		465BDC9A246B091B00C97437 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		465BDC9B246B1FFC00C97437 /* TrackDetailArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailArtworkView.swift; sourceTree = "<group>"; };
+		465BDC9D246B239900C97437 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		4684BE7C2466FBB9004111F0 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		4684BE7F2466FCF9004111F0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		46BCD6BC2467061B00EB48E5 /* PlaylistBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistBoxView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		46BCD6D32467EA9900EB48E5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				465BDC9D246B239900C97437 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				46E366502468084A001A62BD /* TracksImportScreenView.swift in Sources */,
 				46E3665324682BFE001A62BD /* Player.swift in Sources */,
 				46BCD6CB24671FF200EB48E5 /* TrackRepository.swift in Sources */,
+				465BDC9E246B239900C97437 /* UIImage.swift in Sources */,
 				46BCD6D72467F6FC00EB48E5 /* BottomPlayerWidgetView.swift in Sources */,
 				46E3664E2467FFA0001A62BD /* TrackRowView.swift in Sources */,
 				46BCD6D92467F7D700EB48E5 /* MusicListWidgetView.swift in Sources */,

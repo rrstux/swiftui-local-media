@@ -29,7 +29,7 @@ extension Track {
             return nil
         }
         set {
-            let data = newValue?.pngData()
+            let data = newValue?.rotateImage()?.pngData()
             artwork = data
         }
     }

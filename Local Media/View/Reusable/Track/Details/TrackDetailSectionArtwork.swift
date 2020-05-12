@@ -28,12 +28,12 @@ struct TrackDetailSectionArtwork: View {
                 self.showDeleteArtworkAlert = true
             }) {
                 Text("Delete artwork...")
-            }.alert(isPresented: $showDeleteArtworkAlert) {
+            }
+            .foregroundColor(.red)
+            .alert(isPresented: $showDeleteArtworkAlert) {
                 Alert(title: Text(""),
                       message: Text("Are you sure you want to delete the artwork?"),
                       primaryButton: .destructive(Text("Delete")) {
-                        
-                        self.track.title = "dsadas"
                         self.track.artworkImage = nil
                         do {
                             try self.context.save()
