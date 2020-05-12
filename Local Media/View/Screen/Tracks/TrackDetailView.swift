@@ -10,7 +10,8 @@ import SwiftUI
 import CoreData
 
 struct ImagePicker: UIViewControllerRepresentable {
-
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var image: UIImage?
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -24,6 +25,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.image = uiImage
             }
+            self.parent.presentationMode.wrappedValue.dismiss()
         }
     }
     
@@ -56,12 +58,12 @@ struct TrackDetailView: View {
         "Classic",
         "Manele"
     ]
+    @State var showImagePicker = false
     
     fileprivate func SectionArtwork() -> some View {
         Section(header: Text("Artwork")) {
             Button(action: {
-                
-                
+                self.showImagePicker = true
             }) {
                 Text("\(track.artworkImage == nil ? "Add" : "Change") artwork...")
             }
@@ -71,15 +73,23 @@ struct TrackDetailView: View {
                 Text("Delete artwork...")
             }
             .disabled(track.artworkImage == nil)
-        }.sheet(isPresented: Binding.constant(true)) {
-            ImagePicker(image: self.$track.artworkImage)
+        }.sheet(isPresented: $showImagePicker) {
+            ImagePicker(image: self.$track.artworkImage).onDisappear {
+                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                do {
+                    try context.save()
+                    print("✅ saved")
+                } catch {
+                    print("🛑 \(error)")
+                }
+            }
         }
     }
     
     var body: some View {
         NavigationView {
             Form {
-                ArtworkView(image: track.artworkImage)
+                ArtworkView(image: $track.artworkImage)
                 SectionArtwork()
                 Section(header: Text("Nice to have details ♥️"),
                         footer: Text("Nice to have details will provide you some good user interface experience for the long run.")) {

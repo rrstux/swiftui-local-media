@@ -10,13 +10,15 @@ import SwiftUI
 
 struct ArtworkView: View {
     
-    @State var image: UIImage?
+    @Binding var image: UIImage?
     
     var body: some View {
         HStack {
             Spacer()
             if image !== nil {
-                Image(uiImage: image!).resizable()
+                Image(uiImage: image!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             } else {
                 VStack {
                     Image(systemName: "music.note")
@@ -43,6 +45,6 @@ struct ArtworkView: View {
 
 struct ArtworkView_Previews: PreviewProvider {
     static var previews: some View {
-        ArtworkView()
+        ArtworkView(image: Binding.constant(nil))
     }
 }
