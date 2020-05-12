@@ -19,26 +19,29 @@ struct TrackDetailView: View {
         "Classic",
         "Manele"
     ]
+    
+    fileprivate func SectionArtwork() -> some View {
+        Section(header: Text("Artwork")) {
+            Button(action: {
+                
+                
+            }) {
+                Text("\(track.artworkImage == nil ? "Add" : "Change") artwork...")
+            }
+            Button(action: {
+                print("Chaning artwork..")
+            }) {
+                Text("Delete artwork...")
+            }
+            .disabled(track.artworkImage == nil)
+        }
+    }
+    
     var body: some View {
         NavigationView {
             Form {
-                HStack {
-                    Spacer()
-                    Image(uiImage: UIImage(named: "MockPac")!).resizable().frame(width: 250, height: 250)
-                    Spacer()
-                }
-                Section(header: Text("Artwork")) {
-                    Button(action: {
-                        print("Chaning artwork..")
-                    }) {
-                        Text("Change artwork...")
-                    }
-                    Button(action: {
-                        print("Chaning artwork..")
-                    }) {
-                        Text("Delete artwork...").foregroundColor(.red)
-                    }
-                }
+                ArtworkView(image: track.artworkImage)
+                SectionArtwork()
                 Section(header: Text("Nice to have details ♥️"),
                         footer: Text("Nice to have details will provide you some good user interface experience for the long run.")) {
                             

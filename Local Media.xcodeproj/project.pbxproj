@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		462815D22469BC430072D0C4 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D12469BC430072D0C4 /* TrackDetailView.swift */; };
+		462815D6246AF07F0072D0C4 /* ArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D5246AF07F0072D0C4 /* ArtworkView.swift */; };
 		4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD4D2466E5FD00124FE7 /* AppDelegate.swift */; };
 		4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD4F2466E5FD00124FE7 /* SceneDelegate.swift */; };
 		4639BD532466E5FD00124FE7 /* Local_Media.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD512466E5FD00124FE7 /* Local_Media.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		462815D12469BC430072D0C4 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
+		462815D5246AF07F0072D0C4 /* ArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkView.swift; sourceTree = "<group>"; };
 		4639BD4A2466E5FD00124FE7 /* Local Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local Media.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4639BD4D2466E5FD00124FE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4639BD4F2466E5FD00124FE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				46E3664D2467FFA0001A62BD /* TrackRowView.swift */,
+				462815D5246AF07F0072D0C4 /* ArtworkView.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				462815D22469BC430072D0C4 /* TrackDetailView.swift in Sources */,
 				4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */,
 				46BCD6BF24670AA100EB48E5 /* PlaylistCarouselView.swift in Sources */,
+				462815D6246AF07F0072D0C4 /* ArtworkView.swift in Sources */,
 				4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */,
 				4684BE802466FCF9004111F0 /* Colors.swift in Sources */,
 				46E366502468084A001A62BD /* TracksImportScreenView.swift in Sources */,
