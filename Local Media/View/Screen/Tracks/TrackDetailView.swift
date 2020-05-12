@@ -25,8 +25,8 @@ struct TrackDetailView: View {
     var body: some View {
         NavigationView {
             Form {
-                ArtworkView(image: $track.artworkImage)
-                SectionArtwork()
+                TrackDetailArtworkView(image: $track.artworkImage)
+                TrackDetailSectionArtwork()
                 Section(header: Text("Nice to have details ♥️"),
                         footer: Text("Nice to have details will provide you some good user interface experience for the long run.")) {
                             

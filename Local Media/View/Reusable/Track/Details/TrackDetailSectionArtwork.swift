@@ -1,5 +1,5 @@
 //
-//  SectionArtwork.swift
+//  TrackDetailSectionArtwork.swift
 //  Local Media
 //
 //  Created by Robert Sandru on 5/12/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SectionArtwork: View {
+struct TrackDetailSectionArtwork: View {
     
     @EnvironmentObject var track: Track
     
@@ -56,10 +56,10 @@ struct SectionArtwork: View {
     }
 }
 
-struct SectionArtwork_Previews: PreviewProvider {
+struct TrackDetailSectionArtwork_Previews: PreviewProvider {
     static var previews: some View {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let track = Track(context: context)
-        return SectionArtwork().environmentObject(track)
+        return TrackDetailSectionArtwork().environmentObject(track)
     }
 }

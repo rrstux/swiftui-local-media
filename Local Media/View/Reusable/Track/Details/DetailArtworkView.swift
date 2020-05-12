@@ -1,5 +1,5 @@
 //
-//  ArtworkView.swift
+//  DetailArtworkView.swift
 //  Local Media
 //
 //  Created by Robert Sandru on 5/12/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ArtworkView: View {
+struct TrackDetailArtworkView: View {
     
     @Binding var image: UIImage?
     
@@ -42,9 +42,8 @@ struct ArtworkView: View {
     }
 }
 
-
-struct ArtworkView_Previews: PreviewProvider {
+struct DetailArtworkView_Previews: PreviewProvider {
     static var previews: some View {
-        ArtworkView(image: Binding.constant(nil))
+        TrackDetailArtworkView(image: Binding.constant(nil))
     }
 }

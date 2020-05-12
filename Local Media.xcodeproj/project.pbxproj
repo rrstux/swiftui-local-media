@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		462815D22469BC430072D0C4 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D12469BC430072D0C4 /* TrackDetailView.swift */; };
-		462815D6246AF07F0072D0C4 /* ArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D5246AF07F0072D0C4 /* ArtworkView.swift */; };
-		462815DA246AFAF60072D0C4 /* SectionArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D9246AFAF60072D0C4 /* SectionArtwork.swift */; };
+		462815DA246AFAF60072D0C4 /* TrackDetailSectionArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D9246AFAF60072D0C4 /* TrackDetailSectionArtwork.swift */; };
 		462815DC246AFB1D0072D0C4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815DB246AFB1D0072D0C4 /* ImagePicker.swift */; };
 		4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD4D2466E5FD00124FE7 /* AppDelegate.swift */; };
 		4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD4F2466E5FD00124FE7 /* SceneDelegate.swift */; };
@@ -19,6 +18,7 @@
 		4639BD5A2466E60000124FE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4639BD592466E60000124FE7 /* Preview Assets.xcassets */; };
 		4639BD5D2466E60000124FE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4639BD5B2466E60000124FE7 /* LaunchScreen.storyboard */; };
 		4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */; };
+		465BDC9C246B1FFC00C97437 /* TrackDetailArtworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465BDC9B246B1FFC00C97437 /* TrackDetailArtworkView.swift */; };
 		4684BE7D2466FBB9004111F0 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684BE7C2466FBB9004111F0 /* HomeScreenView.swift */; };
 		4684BE802466FCF9004111F0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684BE7F2466FCF9004111F0 /* Colors.swift */; };
 		46BCD6BD2467061B00EB48E5 /* PlaylistBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCD6BC2467061B00EB48E5 /* PlaylistBoxView.swift */; };
@@ -41,8 +41,7 @@
 
 /* Begin PBXFileReference section */
 		462815D12469BC430072D0C4 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
-		462815D5246AF07F0072D0C4 /* ArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkView.swift; sourceTree = "<group>"; };
-		462815D9246AFAF60072D0C4 /* SectionArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionArtwork.swift; sourceTree = "<group>"; };
+		462815D9246AFAF60072D0C4 /* TrackDetailSectionArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailSectionArtwork.swift; sourceTree = "<group>"; };
 		462815DB246AFB1D0072D0C4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4639BD4A2466E5FD00124FE7 /* Local Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local Media.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4639BD4D2466E5FD00124FE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		4639BD5E2466E60000124FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4639BD642466E7BB00124FE7 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		465BDC9A246B091B00C97437 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		465BDC9B246B1FFC00C97437 /* TrackDetailArtworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailArtworkView.swift; sourceTree = "<group>"; };
 		4684BE7C2466FBB9004111F0 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		4684BE7F2466FCF9004111F0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		46BCD6BC2467061B00EB48E5 /* PlaylistBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistBoxView.swift; sourceTree = "<group>"; };
@@ -89,7 +89,8 @@
 		462815D8246AFAE30072D0C4 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				462815D9246AFAF60072D0C4 /* SectionArtwork.swift */,
+				462815D9246AFAF60072D0C4 /* TrackDetailSectionArtwork.swift */,
+				465BDC9B246B1FFC00C97437 /* TrackDetailArtworkView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -262,7 +263,6 @@
 			children = (
 				462815D8246AFAE30072D0C4 /* Details */,
 				46E3664D2467FFA0001A62BD /* TrackRowView.swift */,
-				462815D5246AF07F0072D0C4 /* ArtworkView.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -371,9 +371,8 @@
 				462815D22469BC430072D0C4 /* TrackDetailView.swift in Sources */,
 				4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */,
 				46BCD6BF24670AA100EB48E5 /* PlaylistCarouselView.swift in Sources */,
-				462815D6246AF07F0072D0C4 /* ArtworkView.swift in Sources */,
 				4639BD652466E7BB00124FE7 /* DocumentBrowserViewController.swift in Sources */,
-				462815DA246AFAF60072D0C4 /* SectionArtwork.swift in Sources */,
+				462815DA246AFAF60072D0C4 /* TrackDetailSectionArtwork.swift in Sources */,
 				4684BE802466FCF9004111F0 /* Colors.swift in Sources */,
 				46E366502468084A001A62BD /* TracksImportScreenView.swift in Sources */,
 				46E3665324682BFE001A62BD /* Player.swift in Sources */,
@@ -385,6 +384,7 @@
 				46BCD6C224670AFB00EB48E5 /* PlaylistsWidgetView.swift in Sources */,
 				4639BD552466E5FD00124FE7 /* ContentView.swift in Sources */,
 				46E3665B246883D1001A62BD /* TrackProgressView.swift in Sources */,
+				465BDC9C246B1FFC00C97437 /* TrackDetailArtworkView.swift in Sources */,
 				46E3665824685C31001A62BD /* DocumentsManager.swift in Sources */,
 				46BCD6D52467EAA700EB48E5 /* Track.swift in Sources */,
 				46BCD6BD2467061B00EB48E5 /* PlaylistBoxView.swift in Sources */,
