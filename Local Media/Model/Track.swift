@@ -21,10 +21,17 @@ extension Track {
     }
     
     var artworkImage: UIImage? {
-        if let artworkData = artwork {
-            return UIImage(data: artworkData)
+        get {
+
+            if let artworkData = artwork {
+                return UIImage(data: artworkData)
+            }
+            return nil
         }
-        return nil
+        set {
+            let data = newValue?.pngData()
+            artwork = data
+        }
     }
 }
 

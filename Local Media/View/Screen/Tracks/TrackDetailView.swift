@@ -9,6 +9,43 @@
 import SwiftUI
 import CoreData
 
+struct ImagePicker: UIViewControllerRepresentable {
+
+    @Binding var image: UIImage?
+    
+    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        let parent: ImagePicker
+
+        init(_ parent: ImagePicker) {
+            self.parent = parent
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let uiImage = info[.originalImage] as? UIImage {
+                parent.image = uiImage
+            }
+        }
+    }
+    
+    typealias UIViewControllerType = UIImagePickerController
+    
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let vc = UIImagePickerController()
+        vc.delegate = context.coordinator
+        return vc
+    }
+    
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+        
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        let coordinator = Coordinator(self)
+        return coordinator
+    }
+    
+}
+
 struct TrackDetailView: View {
     
     @Binding var track: Track
@@ -34,6 +71,8 @@ struct TrackDetailView: View {
                 Text("Delete artwork...")
             }
             .disabled(track.artworkImage == nil)
+        }.sheet(isPresented: Binding.constant(true)) {
+            ImagePicker(image: self.$track.artworkImage)
         }
     }
     
