@@ -11,13 +11,17 @@ import SwiftUI
 struct TracksScreenView: View {
     
     @EnvironmentObject var store: Store
-    @State var showImportSheet: Bool = false
+    @State var showImportSheet = false
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                MusicListWidgetView()
-                Spacer()
+                if (store.tracks.count > 0) {
+                    MusicListWidgetView()
+                    Spacer()
+                } else {
+                    NoTracksImportNowView()
+                }
                 if (store.player.playerState == .playing || store.player.playerState == .paused) {
                     BottomPlayerWidgetView()
                 }
@@ -30,7 +34,7 @@ struct TracksScreenView: View {
                     }) {
                         Image(systemName: "waveform.path.badge.plus")
                     }.accentColor(Color(Colors.primary.get()))
-                })
+            })
         }.sheet(isPresented: $showImportSheet) {
             TracksImportScreenView().environmentObject(self.store)
         }

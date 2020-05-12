@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46090A1F246B25B60073D9C3 /* TrackDetailFullScreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46090A1E246B25B60073D9C3 /* TrackDetailFullScreenImageView.swift */; };
 		46090A21246B2A960073D9C3 /* TrackDetailSectionTrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46090A20246B2A960073D9C3 /* TrackDetailSectionTrackDetailView.swift */; };
+		46090A24246B325A0073D9C3 /* NoTracksImportNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46090A23246B325A0073D9C3 /* NoTracksImportNowView.swift */; };
 		462815D22469BC430072D0C4 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D12469BC430072D0C4 /* TrackDetailView.swift */; };
 		462815DA246AFAF60072D0C4 /* TrackDetailSectionArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815D9246AFAF60072D0C4 /* TrackDetailSectionArtwork.swift */; };
 		462815DC246AFB1D0072D0C4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462815DB246AFB1D0072D0C4 /* ImagePicker.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		46090A1E246B25B60073D9C3 /* TrackDetailFullScreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailFullScreenImageView.swift; sourceTree = "<group>"; };
 		46090A20246B2A960073D9C3 /* TrackDetailSectionTrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailSectionTrackDetailView.swift; sourceTree = "<group>"; };
+		46090A23246B325A0073D9C3 /* NoTracksImportNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTracksImportNowView.swift; sourceTree = "<group>"; };
 		462815D12469BC430072D0C4 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		462815D9246AFAF60072D0C4 /* TrackDetailSectionArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailSectionArtwork.swift; sourceTree = "<group>"; };
 		462815DB246AFB1D0072D0C4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -92,6 +94,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46090A22246B32390073D9C3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		462815D8246AFAE30072D0C4 /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +205,7 @@
 		46BCD6BA2467057D00EB48E5 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				46090A22246B32390073D9C3 /* Home */,
 				46BCD6C024670AEB00EB48E5 /* Widget */,
 				46BCD6BB246705EF00EB48E5 /* Playlist */,
 				46E3664C2467FF82001A62BD /* Track */,
@@ -272,6 +282,7 @@
 			children = (
 				462815D8246AFAE30072D0C4 /* Details */,
 				46E3664D2467FFA0001A62BD /* TrackRowView.swift */,
+				46090A23246B325A0073D9C3 /* NoTracksImportNowView.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -376,6 +387,7 @@
 				46BCD6D02467E3C200EB48E5 /* TracksScreenView.swift in Sources */,
 				4639BD4E2466E5FD00124FE7 /* AppDelegate.swift in Sources */,
 				46BCD6DB2467FB5200EB48E5 /* Store.swift in Sources */,
+				46090A24246B325A0073D9C3 /* NoTracksImportNowView.swift in Sources */,
 				462815DC246AFB1D0072D0C4 /* ImagePicker.swift in Sources */,
 				462815D22469BC430072D0C4 /* TrackDetailView.swift in Sources */,
 				4639BD502466E5FD00124FE7 /* SceneDelegate.swift in Sources */,
