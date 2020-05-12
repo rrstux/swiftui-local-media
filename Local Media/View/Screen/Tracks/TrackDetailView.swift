@@ -11,7 +11,7 @@ import CoreData
 
 struct TrackDetailView: View {
     
-    @Binding var track: Track
+    @EnvironmentObject var track: Track
     
     @State var genres: [String] = [
         "Rock",
@@ -26,7 +26,7 @@ struct TrackDetailView: View {
         NavigationView {
             Form {
                 ArtworkView(image: $track.artworkImage)
-                SectionArtwork(track: $track)
+                SectionArtwork()
                 Section(header: Text("Nice to have details ♥️"),
                         footer: Text("Nice to have details will provide you some good user interface experience for the long run.")) {
                             
@@ -121,6 +121,6 @@ struct TrackDetailView_Previews: PreviewProvider {
         
         previewTrack.artist = "2Pac"
         previewTrack.title = "Lil' Homies"
-        return TrackDetailView(track: Binding.constant(previewTrack)).environment(\.colorScheme, .dark)
+        return TrackDetailView().environmentObject(previewTrack).environment(\.colorScheme, .dark)
     }
 }

@@ -41,7 +41,7 @@ struct TrackRowView: View {
             self.showEditSheet = true
         }
         .sheet(isPresented: $showEditSheet) {
-            TrackDetailView(track: self.$track).environmentObject(self.track)
+            TrackDetailView().environmentObject(self.track)
         }
     }
 }

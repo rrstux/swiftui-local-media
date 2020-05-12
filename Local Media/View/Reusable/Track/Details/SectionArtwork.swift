@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SectionArtwork: View {
     
-    @Binding var track: Track
+    @EnvironmentObject var track: Track
     
     @State var showImagePicker: Bool = false
     @State var showDeleteArtworkAlert: Bool = false
@@ -60,6 +60,6 @@ struct SectionArtwork_Previews: PreviewProvider {
     static var previews: some View {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let track = Track(context: context)
-        return SectionArtwork(track: Binding.constant(track))
+        return SectionArtwork().environmentObject(track)
     }
 }
