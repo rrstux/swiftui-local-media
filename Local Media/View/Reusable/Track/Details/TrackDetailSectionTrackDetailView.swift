@@ -42,7 +42,7 @@ struct TrackDetailSectionTrackDetailView: View {
                             Text("Year")
                             Spacer()
                         }.frame(width: 60)
-                        TextField("Year", text: Binding.constant("2000"))
+                        TextField("Year", value: Binding($track.year), formatter: NumberFormatter())
                     }
 //                    Picker(selection: $genres, label: Text("Genre")) {
 //                        ForEach(genres, id: \.self) { (genre: String) in
