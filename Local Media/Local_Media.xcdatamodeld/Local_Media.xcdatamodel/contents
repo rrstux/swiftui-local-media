@@ -11,7 +11,12 @@
         <attribute name="title" attributeType="String" defaultValueString=""/>
         <attribute name="year" attributeType="Integer 16" defaultValueString="2020" usesScalarValueType="YES"/>
     </entity>
+    <entity name="Trait" representedClassName="Trait" syncable="YES" codeGenerationType="class">
+        <attribute name="key" attributeType="String" defaultValueString=""/>
+        <attribute name="value" attributeType="String" defaultValueString=""/>
+    </entity>
     <elements>
         <element name="Track" positionX="-54" positionY="9" width="128" height="178"/>
+        <element name="Trait" positionX="-54" positionY="81" width="128" height="73"/>
     </elements>
 </model>

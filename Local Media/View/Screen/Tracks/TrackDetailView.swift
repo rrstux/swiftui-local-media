@@ -29,46 +29,8 @@ struct TrackDetailView: View {
                 TrackDetailArtworkView(image: $track.artworkImage)
                 TrackDetailSectionArtwork()
                 TrackDetailSectionTrackDetailView()
-                
-                Section(header: Text("Options")) {
-                    Toggle("Use as blurred background on the Play screen", isOn: Binding.constant(true))
-                    Toggle("Always play on repeat", isOn: Binding.constant(true))
-                    Toggle("Count # of plays", isOn: Binding.constant(true))
-                    Stepper("Volume on play: 100", value: Binding.constant(30), in: 0...100)
-                }
-                
-                Section(header: Text("File Details "), footer: Text("")) {
-                    HStack {
-                        HStack {
-                            Text("File Name")
-                            Spacer()
-                        }.frame(width: 100)
-                        TextField("File Name", text: Binding($track.fileName)!)
-                    }
-                    HStack {
-                        HStack {
-                            Text("File URL")
-                            Spacer()
-                        }.frame(width: 100)
-                        TextField("File URL", text: Binding($track.fileUrl)!)
-                    }
-                }
-                
-                Section {
-                    Text("pizda mati salveaza").onTapGesture {
-                        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-                        
-                        
-                        
-                        do {
-                            
-                            try context.save()
-                        } catch {
-                            print("Errrr \(error)")
-                        }
-                    }
-                    
-                }
+                TrackDetailSectionFileDetailsView()
+                TrackDetailOptionsView()
                 
             }
             .navigationBarItems(trailing: HStack {

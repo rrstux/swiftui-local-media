@@ -44,13 +44,6 @@ struct TrackDetailSectionTrackDetailView: View {
                         }.frame(width: 60)
                         TextField("Year", value: Binding($track.year), formatter: NumberFormatter())
                     }
-//                    Picker(selection: $genres, label: Text("Genre")) {
-//                        ForEach(genres, id: \.self) { (genre: String) in
-//                            Text(genre).tag(genre)
-//
-//                        }
-//                        .navigationBarTitle("Select Gender")
-//                    }
         }
     }
 }
