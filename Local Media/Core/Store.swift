@@ -18,8 +18,7 @@ class Store: ObservableObject {
     var playerCancellable: AnyCancellable?
     
     init() {
-        loadTracks()
-        loadTraits()
+        self.tracks = TrackManager.shared.getTracks()
         
         playerCancellable = player.objectWillChange.sink(receiveValue: {
             self.objectWillChange.send()
@@ -29,47 +28,7 @@ class Store: ObservableObject {
 
 extension Store {
     
-    func loadTracks() {
-        print("🔄 Fetching tracks...")
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        var tracks: [Track] = []
-        do {
-            tracks = try context.fetch(Track.fetchRequest())
-            print("✅ Fetched tracks. Count: \(tracks.count)")
-        } catch {
-            print("🛑 Could not fetch Tracks!")
-        }
-        
-        self.tracks = tracks
-    }
-    
     func loadTracks(from urls: [URL]) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let importedFiles = DocumentsManager.shared.copyFiles(from: urls, toDirectory: .musicDirectory)
-        for importedFile in importedFiles {
-            let track = Track(context: context)
-            track.fileName = importedFile.lastPathComponent
-            track.fileUrl = "\(DirectoryChildrenDirs.musicDirectory.rawValue)/\(importedFile.lastPathComponent)"
-            tracks.append(track)
-        }
-        do {
-            try context.save()
-            print("✅ Saved context with new tracks.")
-        } catch {
-            print("🛑 Could not save context with new tracks due to error: \(error)")
-        }
-    }
-    
-    func loadTracks(from path: String) {
-        
-    }
-}
-
-// MARK: Traits
-extension Store {
-    
-    func loadTraits() {
-
+        self.tracks = TrackManager.shared.importTracks(from: urls)
     }
 }
