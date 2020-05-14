@@ -27,6 +27,7 @@ class TraitsManager {
                     let newTrait = Trait(context: CoreDataManager.shared.context)
                     newTrait.key = trait.rawValue
                     newTrait.value = trait.value
+                    newTrait.valueType = trait.valueType.rawValue
                     do {
                         try CoreDataManager.shared.save(model: newTrait)
                     } catch {

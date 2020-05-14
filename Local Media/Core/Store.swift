@@ -12,7 +12,6 @@ import Combine
 class Store: ObservableObject {
     
     @Published var tracks: [Track] = []
-    @Published var traits: [Trait] = []
     
     @Published var player: Player = Player()
     
