@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        TraitsManager.shared.syncTraits()
+        let syncManager: SyncManager = SyncManager()
+        syncManager.sync()
         
         return true
     }

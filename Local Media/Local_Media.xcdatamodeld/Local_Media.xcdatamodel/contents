@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="ObjectType" representedClassName="ObjectType" syncable="YES" codeGenerationType="class">
+        <attribute name="key" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Track" representedClassName="Track" syncable="YES" codeGenerationType="class">
         <attribute name="album" attributeType="String" defaultValueString=""/>
         <attribute name="artist" attributeType="String" defaultValueString=""/>
@@ -16,8 +19,13 @@
         <attribute name="value" attributeType="String" defaultValueString=""/>
         <attribute name="valueType" attributeType="String" defaultValueString=""/>
     </entity>
+    <entity name="TraitValue" representedClassName="TraitValue" syncable="YES" codeGenerationType="class">
+        <attribute name="value" attributeType="String" defaultValueString=""/>
+    </entity>
     <elements>
         <element name="Track" positionX="-54" positionY="9" width="128" height="178"/>
         <element name="Trait" positionX="-54" positionY="81" width="128" height="88"/>
+        <element name="TraitValue" positionX="-36" positionY="99" width="128" height="58"/>
+        <element name="ObjectType" positionX="-27" positionY="108" width="128" height="58"/>
     </elements>
 </model>

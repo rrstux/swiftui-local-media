@@ -1,5 +1,5 @@
 //
-//  TraitsManager.swift
+//  TraitSynchronizable.swift
 //  Local Media
 //
 //  Created by Robert Sandru on 5/13/20.
@@ -8,17 +8,13 @@
 
 import Foundation
 
-class TraitsManager {
+class TraitSynchronizable: Synchronizable {
     
-    static var shared: TraitsManager = TraitsManager()
-    
-    private init() {}
-    
-    /** Best called right after the app shows up. */
-    func syncTraits() {
+    func sync() {
+        print("🔄 Preparing Traits sync...")
         do {
             for trait in Traits.allCases {
-                print("🟢 Syncing trait \(trait.rawValue)...")
+                print("🟢 Syncing Trait \(trait.rawValue)...")
                 let keyPredicate = NSPredicate(format: "key = %@", trait.rawValue)
                 let valPredicate = NSPredicate(format: "value = %@", trait.value)
                 let existingTraits: [Trait] = try CoreDataManager.shared.get(predicates: [keyPredicate, valPredicate])
@@ -33,10 +29,12 @@ class TraitsManager {
                     } catch {
                         print("🛑 Could not sync \(trait.rawValue) trait. Err: \(error)")
                     }
+                } else {
+                    print("✅ Skipping \(trait.rawValue) sync because it exists in the database.")
                 }
             }
         } catch {
-            print("🛑 Could not sync traits due to errr: \(error)")
+            print("🛑 Could not sync Traits due to error: \(error)")
         }
     }
 }
