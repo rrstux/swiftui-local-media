@@ -42,7 +42,12 @@ struct TrackDetailSectionTrackDetailView: View {
                             Text("Year")
                             Spacer()
                         }.frame(width: 60)
-                        TextField("Year", value: Binding($track.year), formatter: NumberFormatter())
+                        TextField("Year",
+                                  value: Binding($track.year),
+                                  formatter: NumberFormatter(),
+                                  onCommit: {
+                                    UIApplication.shared.endEditing()
+                        })
                     }
         }
     }
