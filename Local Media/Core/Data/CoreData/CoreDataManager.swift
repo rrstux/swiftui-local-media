@@ -26,6 +26,15 @@ final class CoreDataManager {
 // MARK: CoreData Wrapper
 extension CoreDataManager {
     
+    func get<T: NSManagedObject>(predicates: [NSPredicate] = []) throws -> T {
+        do {
+            let res: [T] = try get(predicates: predicates)
+            return res.first!
+        } catch {
+            throw CoreDataManagerError.getFailed(err: error)
+        }
+    }
+    
     func get<T: NSManagedObject>(predicates: [NSPredicate] = []) throws -> [T] {
         do {
             let fetchRequest = T.fetchRequest()
