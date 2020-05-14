@@ -37,6 +37,16 @@ struct TrackDetailOptionsView: View {
                                     .multilineTextAlignment(.trailing)
                             }
                         }
+                        if trait.valueType! == TraitsValueTypes.slider.rawValue {
+                            VStack(alignment: .leading) {
+                                Text(trait.value!)
+                                HStack {
+                                    Text("2:56")
+                                    Slider(value: Binding.constant(30), in: 0...100)
+                                    Text("7:25")
+                                }
+                            }
+                        }
                     } else {
                         Text("\(trait.value!) option is disabled currently.")
                     }
