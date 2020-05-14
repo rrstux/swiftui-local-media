@@ -12,12 +12,15 @@ import Combine
 class Store: ObservableObject {
     
     @Published var tracks: [Track] = []
+    @Published var traits: [Trait] = []
+    
     @Published var player: Player = Player()
     
     var playerCancellable: AnyCancellable?
     
     init() {
         loadTracks()
+        loadTraits()
         
         playerCancellable = player.objectWillChange.sink(receiveValue: {
             self.objectWillChange.send()
@@ -61,5 +64,13 @@ extension Store {
     
     func loadTracks(from path: String) {
         
+    }
+}
+
+// MARK: Traits
+extension Store {
+    
+    func loadTraits() {
+
     }
 }

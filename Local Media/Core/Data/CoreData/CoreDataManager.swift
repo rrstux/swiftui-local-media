@@ -17,6 +17,7 @@ final class CoreDataManager {
     enum CoreDataManagerError: Error {
         case getFailed(err: Error)
         case saveFailed(err: Error)
+        case deleteFailed(err: Error)
     }
     
     private init() {}
@@ -42,6 +43,15 @@ extension CoreDataManager {
             try context.save()
         } catch {
             throw CoreDataManagerError.saveFailed(err: error)
+        }
+    }
+    
+    func delete<T: NSManagedObject>(model: T) throws {
+        context.delete(model)
+        do {
+            try context.save()
+        } catch {
+            throw CoreDataManagerError.deleteFailed(err: error)
         }
     }
 }
