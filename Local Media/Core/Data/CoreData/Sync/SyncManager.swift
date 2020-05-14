@@ -11,8 +11,7 @@ import Foundation
 class SyncManager {
     
     var synchronizables: [Synchronizable] = [
-        TraitSynchronizable(),
-        ObjectTypesSynchronizable()
+        TraitSynchronizable()
     ]
     
     func sync() {

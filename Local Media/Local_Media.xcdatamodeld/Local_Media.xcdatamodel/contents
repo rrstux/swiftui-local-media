@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="ObjectType" representedClassName="ObjectType" syncable="YES" codeGenerationType="class">
-        <attribute name="key" optional="YES" attributeType="String"/>
-    </entity>
     <entity name="Track" representedClassName="Track" syncable="YES" codeGenerationType="class">
         <attribute name="album" attributeType="String" defaultValueString=""/>
         <attribute name="artist" attributeType="String" defaultValueString=""/>
@@ -13,19 +10,22 @@
         <attribute name="genre" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="title" attributeType="String" defaultValueString=""/>
         <attribute name="year" attributeType="Integer 16" defaultValueString="2020" usesScalarValueType="YES"/>
+        <relationship name="traitValue" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TraitValue" inverseName="track" inverseEntity="TraitValue"/>
     </entity>
     <entity name="Trait" representedClassName="Trait" syncable="YES" codeGenerationType="class">
         <attribute name="key" attributeType="String" defaultValueString=""/>
         <attribute name="value" attributeType="String" defaultValueString=""/>
         <attribute name="valueType" attributeType="String" defaultValueString=""/>
+        <relationship name="traitValues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TraitValue" inverseName="trait" inverseEntity="TraitValue"/>
     </entity>
     <entity name="TraitValue" representedClassName="TraitValue" syncable="YES" codeGenerationType="class">
         <attribute name="value" attributeType="String" defaultValueString=""/>
+        <relationship name="track" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Track" inverseName="traitValue" inverseEntity="Track"/>
+        <relationship name="trait" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trait" inverseName="traitValues" inverseEntity="Trait"/>
     </entity>
     <elements>
-        <element name="Track" positionX="-54" positionY="9" width="128" height="178"/>
-        <element name="Trait" positionX="-54" positionY="81" width="128" height="88"/>
-        <element name="TraitValue" positionX="-36" positionY="99" width="128" height="58"/>
-        <element name="ObjectType" positionX="-27" positionY="108" width="128" height="58"/>
+        <element name="Track" positionX="44" positionY="-265" width="128" height="193"/>
+        <element name="Trait" positionX="269.5" positionY="-91.5" width="128" height="103"/>
+        <element name="TraitValue" positionX="-6" positionY="76.5" width="128" height="88"/>
     </elements>
 </model>
