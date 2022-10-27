@@ -13,5 +13,5 @@ We send no data to servers. What happens on your iPhone, stays on your iPhone.
 
 Light              |  Dark 
 :-------------------------:|:-------------------------:|
-![](Previews/music-list-light.png) | ![](Previews/music-list-dark.png)
-![](Previews/no-media-light.png) | ![](Previews/no-media-dark.png)
+![](Previews/music-list-light.PNG) | ![](Previews/music-list-dark.PNG)
+![](Previews/no-media-light.PNG) | ![](Previews/no-media-dark.PNG)
